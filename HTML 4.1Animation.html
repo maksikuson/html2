@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body 
+        {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+        }
 
+        .container
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        .stool-container
+        {
+            display: flex;
+            position: relative;
+            perspective: 400px;
+        }
+
+        .stool1, .stool2
+        {
+            width: 300px;
+            height: 200px;
+            background-color: #7e2144;
+            border: 5px solid #3d071d;
+            transform-origin: bottom center ;
+            transition: transform 2s;
+        }
+
+        .stool-container:hover .stool1
+        {
+            transform: rotateY(45deg);
+        }
+
+        .stool-container:hover .stool2
+        {
+            transform: rotateY(-45deg);
+        }
+
+        .text
+        {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            opacity: 0;
+            transition: opacity 2s;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .container:hover .stool-container .text
+        {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="stool-container">
+            <div class="stool1"></div>
+            <div class="text">HELLO</div>
+            <div class="stool2"></div>
+        </div>
+    </div>
+</body>
+</html>

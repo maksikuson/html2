@@ -3,9 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rotating Clock Animation</title>
+    <style>
+        @keyframes rotate360 {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .container
+        {
+            background-color: rgb(228, 236, 240);
+            width: 500px;
+            height: 350px;
+            margin: auto;
+        }
+        
+        .clock-container 
+        {
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            border-radius: 50%;
+            border: 3.5px solid rgb(58, 148, 140) ;
+            position: relative;
+        }
+
+        .miniCircle
+        {
+            background-color: rgb(58, 148, 140) ;
+            width: 4px;
+            height: 4px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            border: 3.5px solid rgb(58, 148, 140) ;
+        }
+
+        .hour, .minute
+        {
+            position: absolute;
+            left:50%;
+            transform-origin: 100%;
+            background-color: rgb(58, 148, 140);
+        }
+
+        .hour
+        {
+            width: 45%;
+            height: 3px;
+            top: 50%;
+            left: 8%;
+            animation: rotate360 120s linear infinite;
+        }
+        
+        .minute
+        {
+            width: 35%;
+            height: 3px;
+            top: 50%;
+            left: 18%;
+            animation: rotate360 2s linear infinite;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="clock-container ">
+            <div class="miniCircle"></div>
+            <div class="hour"></div>
+            <div class="minute"></div>
+        </div>
+    </div>    
 </body>
 </html>
